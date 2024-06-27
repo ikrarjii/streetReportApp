@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:street__report/config/app_colors.dart';
 import 'package:street__report/config/app_font.dart';
 import 'package:street__report/config/app_icons.dart';
+import 'package:street__report/page/reward.dart';
 
 class Rangking extends StatefulWidget {
   const Rangking({super.key});
@@ -31,6 +32,25 @@ class _RangkingState extends State<Rangking> {
           "Ranking",
           style: AppFont().b900s20w700,
         ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Reward(),
+                    ));
+              },
+              child: const Icon(
+                AppIcons.coinsHand,
+                color: Colors.black,
+                size: 30,
+              ),
+            ),
+          ),
+        ],
         elevation: 0,
         scrolledUnderElevation: 0,
       ),

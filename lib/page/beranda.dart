@@ -5,7 +5,7 @@ import 'package:street__report/config/app_icons.dart';
 import 'package:street__report/page/detail_laporan.dart';
 import 'package:street__report/page/maps.dart';
 import 'package:street__report/page/profil.dart';
-import 'package:street__report/ranking.dart';
+import 'package:street__report/page/ranking.dart';
 
 class Beranda extends StatelessWidget {
   const Beranda({super.key});

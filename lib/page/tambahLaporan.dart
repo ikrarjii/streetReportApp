@@ -1,10 +1,10 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:street__report/config/app_colors.dart';
-import 'package:street__report/config/app_font.dart';
+import 'package:street__report/config/app_icons.dart';
 import 'package:street__report/page/beranda.dart';
+import 'package:street__report/page/message.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
 class TambahLaporan extends StatefulWidget {
@@ -54,6 +54,24 @@ class _TambahLaporanState extends State<TambahLaporan> {
           "Laporan 2",
           style: TextStyle(color: AppColors.base900),
         ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Message(),
+                    ));
+              },
+              child: const Icon(
+                AppIcons.messageCircle01,
+                color: Colors.black,
+              ),
+            ),
+          ),
+        ],
       ),
       body: ListView(
         children: [
@@ -292,7 +310,10 @@ class _TambahLaporanState extends State<TambahLaporan> {
                       ),
                     ],
                   ),
-                  Row(
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Row(
                     children: [
                       Padding(
                         padding: EdgeInsets.only(
@@ -300,7 +321,7 @@ class _TambahLaporanState extends State<TambahLaporan> {
                           bottom: 6,
                         ),
                         child: Text(
-                          "----",
+                          "Tingkat Kerusakan",
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
@@ -310,15 +331,22 @@ class _TambahLaporanState extends State<TambahLaporan> {
                       ),
                     ],
                   ),
-                  TextFieldWidget(
-                    svgPath: 'assets/image/suaraSah.svg',
-                    hintText: 'Masukkan ',
+
+                  Row(
+                    children: [
+                      Container(
+                        width: 100,
+                        height: 100,
+                        color: Colors.amberAccent,
+                      )
+                    ],
                   ),
-                  SizedBox(
+
+                  const SizedBox(
                     height: 10,
                   ),
                   //Suara Batal
-                  Row(
+                  const Row(
                     children: [
                       Padding(
                         padding: EdgeInsets.only(
